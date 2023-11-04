@@ -20,6 +20,8 @@ func ReadFile(path string, cfg interface{}) error {
 
 func ReadString(serializedConfig string, cfg interface{}) error {
 
+	//TODO Add annotations!!!
+
 	err := yaml.Unmarshal([]byte(serializedConfig), cfg)
 	if err == nil {
 		return nil

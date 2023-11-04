@@ -11,14 +11,6 @@ import (
 	"github.com/go-git/go-git/v5/storage/memory"
 )
 
-type GitConfig struct {
-	ProviderUrl string
-	RepoUrl     string
-	Branch      string
-	PemBytes    []byte
-	PemPassword string
-}
-
 func CloneGitRepoSsh(cfg *GitConfig, worktree *billy.Filesystem) error {
 
 	CheckKnownHosts(cfg)
