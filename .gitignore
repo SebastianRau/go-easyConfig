@@ -96,6 +96,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Vendoring
+vendor/
 ## Project
 **keys
 **build

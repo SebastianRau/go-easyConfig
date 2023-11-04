@@ -2,8 +2,8 @@ package easyconfig
 
 import (
 	"github.com/go-git/go-billy/v5/memfs"
-	"github.com/sebastianRau/easyConfig/pkg/configParser"
-	"github.com/sebastianRau/easyConfig/pkg/gitTools"
+	"github.com/sebastianRau/go-easyConfig/pkg/configParser"
+	"github.com/sebastianRau/go-easyConfig/pkg/gitTools"
 )
 
 func ReadConfigFromGit(gitConfig *gitTools.GitConfig, fileName string, out interface{}) error {

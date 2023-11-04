@@ -12,7 +12,7 @@ import (
 func main() {
 
 	const (
-		configDemo = "test.yaml"
+		configFileName = "test.yaml"
 	)
 
 	var demoCfg demo.DemoConfig
@@ -24,7 +24,7 @@ func main() {
 			Branch:      "",
 			PemBytes:    []byte{},
 			PemPassword: ""},
-		configDemo,
+		configFileName,
 		demoCfg)
 
 	demo.CheckError(err)
