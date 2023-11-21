@@ -39,11 +39,17 @@ func main() {
 		os.Exit(-2)
 	}
 
-	enc, err := encryption.EncryptString(*stringToEncrypt, *encryptionKeyPath)
+	key, err := os.ReadFile(*encryptionKeyPath)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(-3)
+	}
+
+	enc, err := encryption.EncryptString(*stringToEncrypt, key)
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(-2)
 	}
 	fmt.Println("Encrytion of string is:")
-	fmt.Println(enc)
+	fmt.Printf("${%s}\n", enc)
 }

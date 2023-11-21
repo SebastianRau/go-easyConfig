@@ -19,7 +19,7 @@ func main() {
 		demoCfg demo.DemoConfig
 	)
 
-	err := easyconfig.ConfigFromGit(
+	err := easyconfig.FromGit(
 		&gitTools.GitConfig{
 			ProviderUrl: "github.com",
 			RepoUrl:     "https://github.com/SebastianRau/go-easyConfigDemo/",

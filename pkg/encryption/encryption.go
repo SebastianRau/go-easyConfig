@@ -33,12 +33,7 @@ func CreateKeyFile(createKeyFiles string) error {
 	return nil
 }
 
-func EncryptString(encryptString string, encryptionKeyFile string) (string, error) {
-
-	publicKeyFileBytes, err := os.ReadFile(encryptionKeyFile)
-	if err != nil {
-		return "", err
-	}
+func EncryptString(encryptString string, publicKeyFileBytes []byte) (string, error) {
 
 	privateKey, err := encryptedconfigvalue.NewKeyWithType(string(publicKeyFileBytes))
 	if err != nil {
@@ -56,12 +51,7 @@ func CheckEncryption(config []byte) bool {
 	return encryptedconfigvalue.ContainsEncryptedConfigValueStringVars(config)
 }
 
-func DecryptConfig(cfg interface{}, encryptionKeyFile string) error {
-
-	privateKeyFileBytes, err := os.ReadFile(encryptionKeyFile)
-	if err != nil {
-		return err
-	}
+func DecryptConfig(cfg interface{}, privateKeyFileBytes []byte) error {
 
 	privateKey, err := encryptedconfigvalue.NewKeyWithType(string(privateKeyFileBytes))
 	if err != nil {

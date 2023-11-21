@@ -5,7 +5,6 @@ import (
 	"fmt"
 
 	"github.com/sebastianRau/go-easyConfig/pkg/demo"
-	"github.com/sebastianRau/go-easyConfig/pkg/encryption"
 	"github.com/sebastianRau/go-easyConfig/pkg/gitTools"
 
 	easyconfig "github.com/sebastianRau/go-easyConfig/pkg/easyConfig"
@@ -19,10 +18,7 @@ func main() {
 	)
 
 	var (
-		demoCfg demo.DemoConfig
-	)
-
-	var (
+		demoCfg           demo.DemoConfig
 		encryptionKeyPath = flag.String("k", "", "Encryption Key File")
 	)
 	flag.Parse()
@@ -37,13 +33,10 @@ func main() {
 		configTemplateName,
 		configDataName,
 		&demoCfg)
-
 	demo.CheckError(err)
 
-	err = encryption.DecryptConfig(&demoCfg, *encryptionKeyPath)
-	if err != nil {
-		demo.CheckError(err)
-	}
+	err = easyconfig.EncryptFromFile(*encryptionKeyPath, &demoCfg)
+	demo.CheckError(err)
 
 	fmt.Println(demoCfg.String())
 }
