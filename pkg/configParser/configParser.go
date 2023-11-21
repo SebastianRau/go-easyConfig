@@ -1,13 +1,9 @@
 package configParser
 
 import (
-	"encoding/json"
-	"fmt"
 	"os"
 
-	"github.com/BurntSushi/toml"
 	"gopkg.in/yaml.v3"
-	"olympos.io/encoding/edn"
 )
 
 func ReadFile(path string, cfg interface{}) error {
@@ -15,29 +11,10 @@ func ReadFile(path string, cfg interface{}) error {
 	if err != nil {
 		return err
 	}
-	return ReadString(string(b), cfg)
+	return ReadString(b, cfg)
 }
 
-func ReadString(serializedConfig string, cfg interface{}) error {
-
-	//TODO Add annotations!!!
-
-	err := yaml.Unmarshal([]byte(serializedConfig), cfg)
-	if err == nil {
-		return nil
-	}
-	err = json.Unmarshal([]byte(serializedConfig), cfg)
-	if err == nil {
-		return nil
-	}
-	err = toml.Unmarshal([]byte(serializedConfig), cfg)
-	if err == nil {
-		return nil
-	}
-	err = edn.Unmarshal([]byte(serializedConfig), cfg)
-	if err == nil {
-		return nil
-	}
-
-	return fmt.Errorf("config string could not be parsed")
+func ReadString(buf []byte, cfg interface{}) error {
+	err := yaml.Unmarshal(buf, cfg)
+	return err
 }

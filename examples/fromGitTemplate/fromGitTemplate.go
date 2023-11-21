@@ -12,20 +12,24 @@ import (
 func main() {
 
 	const (
-		configFileName = "test.yaml"
+		configTemplateName = "easyConfigDemo.template.yaml"
+		configDataName     = "easyConfigDemo.data.yaml"
 	)
 
-	var demoCfg demo.DemoConfig
+	var (
+		demoCfg demo.DemoConfig
+	)
 
-	err := easyconfig.ReadConfigFromGit(
+	err := easyconfig.TemplateFromGit(
 		&gitTools.GitConfig{
 			ProviderUrl: "github.com",
-			RepoUrl:     "",
-			Branch:      "",
+			RepoUrl:     "https://github.com/SebastianRau/go-easyConfigDemo/",
+			Branch:      "master",
 			PemBytes:    []byte{},
 			PemPassword: ""},
-		configFileName,
-		demoCfg)
+		configTemplateName,
+		configDataName,
+		&demoCfg)
 
 	demo.CheckError(err)
 	fmt.Println(demoCfg.String())

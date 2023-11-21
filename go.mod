@@ -3,11 +3,10 @@ module github.com/sebastianRau/go-easyConfig
 go 1.20
 
 require (
-	github.com/BurntSushi/toml v1.3.2
 	github.com/go-git/go-billy/v5 v5.5.0
 	github.com/go-git/go-git/v5 v5.10.0
+	github.com/palantir/go-encrypted-config-value v1.27.0
 	gopkg.in/yaml.v3 v3.0.1
-	olympos.io/encoding/edn v0.0.0-20201019073823-d3554ca0b0a3
 )
 
 require (

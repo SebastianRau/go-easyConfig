@@ -6,9 +6,9 @@ import (
 )
 
 type DemoConfig struct {
-	Hello  string
-	World  string
-	Secret string
+	Hello  string `yaml:"hello"`
+	World  string `yaml:"world"`
+	Secret string `yaml:"secret"`
 }
 
 func (d *DemoConfig) String() string {
