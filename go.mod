@@ -1,4 +1,4 @@
-module github.com/sebastianRau/go-easyConfig
+module github.com/sebastianrau/go-easyConfig
 
 go 1.20
 
