@@ -7,10 +7,10 @@ import (
 
 	"github.com/go-git/go-billy/v5"
 	"github.com/go-git/go-billy/v5/memfs"
-	"github.com/sebastianRau/go-easyConfig/pkg/configParser"
-	"github.com/sebastianRau/go-easyConfig/pkg/encryption"
-	"github.com/sebastianRau/go-easyConfig/pkg/gitTools"
-	"github.com/sebastianRau/go-easyConfig/pkg/templating"
+	"github.com/sebastianrau/go-easyConfig/pkg/configParser"
+	"github.com/sebastianrau/go-easyConfig/pkg/encryption"
+	"github.com/sebastianrau/go-easyConfig/pkg/gitTools"
+	"github.com/sebastianrau/go-easyConfig/pkg/templating"
 )
 
 func FromRaw(config []byte, out interface{}) error {

@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/sebastianRau/go-easyConfig/pkg/demo"
-	"github.com/sebastianRau/go-easyConfig/pkg/gitTools"
+	"github.com/sebastianrau/go-easyConfig/pkg/demo"
+	"github.com/sebastianrau/go-easyConfig/pkg/gitTools"
 
-	easyconfig "github.com/sebastianRau/go-easyConfig/pkg/easyConfig"
+	easyconfig "github.com/sebastianrau/go-easyConfig/pkg/easyConfig"
 )
 
 func main() {

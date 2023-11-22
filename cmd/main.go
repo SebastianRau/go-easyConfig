@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/sebastianRau/go-easyConfig/pkg/encryption"
+	"github.com/sebastianrau/go-easyConfig/pkg/encryption"
 )
 
 func main() {

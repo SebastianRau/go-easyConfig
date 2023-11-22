@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sebastianRau/go-easyConfig/pkg/demo"
+	"github.com/sebastianrau/go-easyConfig/pkg/demo"
 
-	easyconfig "github.com/sebastianRau/go-easyConfig/pkg/easyConfig"
+	easyconfig "github.com/sebastianrau/go-easyConfig/pkg/easyConfig"
 )
 
 func main() {
