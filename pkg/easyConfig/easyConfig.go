@@ -92,14 +92,14 @@ func TemplateFromGit(gitConfig *gitTools.GitConfig, templateFile string, dataFil
 	return TemplateFromRaw(templatebuffer, dataBuffer, out)
 }
 
-func EncryptFromRaw(key []byte, cfg interface{}) error {
+func DecryptFromRaw(key []byte, cfg interface{}) error {
 	err := encryption.DecryptConfig(cfg, key)
 	if err != nil {
 		return err
 	}
 	return nil
 }
-func EncryptFromFile(encryptionKeyPath string, cfg interface{}) error {
+func DecryptFromFile(encryptionKeyPath string, cfg interface{}) error {
 	if encryptionKeyPath == "" {
 		return fmt.Errorf("no encryption key found")
 	}
@@ -109,7 +109,7 @@ func EncryptFromFile(encryptionKeyPath string, cfg interface{}) error {
 		return err
 	}
 
-	return EncryptFromRaw(key, cfg)
+	return DecryptFromRaw(key, cfg)
 }
 
 func memFsReadFile(fs *billy.Filesystem, file string) ([]byte, error) {

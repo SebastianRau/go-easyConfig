@@ -35,7 +35,7 @@ func main() {
 		&demoCfg)
 	demo.CheckError(err)
 
-	err = easyconfig.EncryptFromFile(*encryptionKeyPath, &demoCfg)
+	err = easyconfig.DecryptFromFile(*encryptionKeyPath, &demoCfg)
 	demo.CheckError(err)
 
 	fmt.Println(demoCfg.String())

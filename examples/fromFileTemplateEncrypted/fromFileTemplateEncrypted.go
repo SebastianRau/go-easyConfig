@@ -22,7 +22,7 @@ func main() {
 	)
 
 	var (
-		encryptionKeyPath = flag.String("k", "", "Encryption Key File")
+		decryptionKeyPath = flag.String("k", "", "Decryption Key File")
 	)
 	flag.Parse()
 
@@ -33,12 +33,12 @@ func main() {
 
 	demo.CheckError(err)
 
-	if *encryptionKeyPath == "" {
+	if *decryptionKeyPath == "" {
 		fmt.Println("no encryption key found")
 		os.Exit(-1)
 	}
 
-	err = easyconfig.EncryptFromFile(*encryptionKeyPath, &demoCfg)
+	err = easyconfig.DecryptFromFile(*decryptionKeyPath, &demoCfg)
 	if err != nil {
 		demo.CheckError(err)
 	}

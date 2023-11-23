@@ -44,7 +44,7 @@ func main() {
 		&demoCfg)
 	demo.CheckError(err)
 
-	err = easyconfig.EncryptFromRaw(encryptionKey, &demoCfg)
+	err = easyconfig.DecryptFromRaw(encryptionKey, &demoCfg)
 	if err != nil {
 		demo.CheckError(err)
 	}
